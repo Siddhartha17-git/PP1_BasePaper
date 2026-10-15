@@ -1,0 +1,42 @@
+# Configuration for Base Paper Core Engine Reproduction
+# IEEE Access (2025): "AI-Driven Personalized Learning and Remedial Recommendation Through Knowledge Concept-Centric Evaluation"
+
+seed: 42
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  output_dir: "outputs"
+  tables_dir: "outputs/tables"
+  figures_dir: "outputs/figures"
+  logs_dir: "outputs/logs"
+
+# Manual column mapping override if needed (empty by default for auto-mapping)
+column_map: {}
+
+# Preprocessing parameters
+preprocessing:
+  top_n_concepts: 20
+  min_seq_len: 20
+  max_seq_len: 200
+  train_split_ratio: 0.75
+
+# EKT Model hyperparameters (as stated in paper)
+model:
+  embed_dim: 100
+  hidden_dim: 100
+  dropout: 0.3
+  lr: 0.001
+  batch_size: 32
+  epochs: 12
+
+# Knowledge Gap Engine parameters
+gap_engine:
+  threshold: 0.50     # 50% mastery threshold
+  target: 0.70        # Threshold + 20% = 70% target
+
+# Remedial recommendation parameters
+remedial:
+  mode: "OFFLINE"     # "OFFLINE" (deterministic template) or "LIVE" (OpenAI API)
+  openai_model: "gpt-4o"
+  max_remedial_rounds: 3

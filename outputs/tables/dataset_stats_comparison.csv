@@ -1,0 +1,7 @@
+Metric,Paper (AMPLE LMS),Reproduced Dataset
+Concepts,382,20
+Learners,"1,276","1,723"
+Questions / Problems,N/A,"7,377"
+Total Interactions,"359,681","154,244"
+Avg Interactions / Learner,~281,89.5
+Avg Correct Rate,61.67%,66.14%
